@@ -18,9 +18,23 @@ namespace Greeting.Test
         }
 
         [Fact]
-        public void SimpleGreet2()
+        public void SimpleGreetNull()
         {
-
+            var result = _sut.Greet(null);
+            Assert.Equal("Hello, my friend.", result);
         }
+
+        //[Fact]
+        //public void IsUpperCaseTest() 
+        //{
+        //    var result = _sut.Greet("JERRY");
+        //    Assert.Equal("HELLO JERRY", result);
+        //}
+
+        //[Fact]
+        //public void MoreName()
+        //{
+        //    var result = _sut.Greet({"Jill","Jane"});
+        //}
     }
 }
