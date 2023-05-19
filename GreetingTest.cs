@@ -40,17 +40,18 @@ namespace Greeting.Test
             Assert.Equal("Hello, Jill and Jane.", result);
         }
 
-        //[Fact]
-        //public void SandBox()
-        //{
-        //    var result = _sut.Greet("Andre", "Paperino");
-        //    _output.WriteLine(result);
-        //}
         [Fact]
         public void ALotOfNames()
         {
             var result = _sut.Greet("Amy", "Brian", "Charlotte");
             Assert.Equal("Hello, Amy, Brian, and Charlotte.", result);
+        }
+
+        [Fact]
+        public void MixedCase()
+        {
+            var result = _sut.Greet("Amy", "BRIAN", "Charlotte");
+            Assert.Equal("Hello, Amy and Charlotte. AND HELLO BRIAN!", result);
         }
     }
 }
