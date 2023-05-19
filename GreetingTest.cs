@@ -6,7 +6,6 @@ namespace Greeting.Test
     public class GreetingTest
     {
         private readonly Greeting _sut;
-        private readonly ITestOutputHelper _output;
         public GreetingTest()
         {//ctor del _sut
             _sut = new Greeting();
@@ -59,6 +58,13 @@ namespace Greeting.Test
         {
             var result = _sut.Greet("Bob", "Charlie, Dianne");
             Assert.Equal("Hello, Bob, Charlie, and Dianne.", result);
+        }
+
+        [Fact]
+        public void Escape()
+        {
+            var result = _sut.Greet("Bob", "\"Charlie, Dianne\"");
+            Assert.Equal("Hello, Bob and Charlie, Dianne.", result);
         }
     }
 }
